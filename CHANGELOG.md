@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.6.0 (2025-11-28)
+
+### Features
+
+- Change the name of the project
+  ([`29ccb9c`](https://github.com/ca5ual/python-devops-cicd-project/commit/29ccb9c2888996da54329642808397331a32e12b))
+
+
 ## v1.5.0 (2025-11-28)
 
 ### Features
