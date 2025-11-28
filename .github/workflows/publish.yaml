@@ -33,6 +33,7 @@ jobs:
   publish_testpypi:
     needs: build
     runs-on: ubuntu-latest
+    environment: development
     permissions:
       id-token: write
       contents: read
@@ -45,4 +46,4 @@ jobs:
         with:
           repository-url: https://test.pypi.org/legacy
           skip-existing: true
-          verbose: 
+          verbose: false
