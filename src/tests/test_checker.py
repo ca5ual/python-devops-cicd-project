@@ -5,8 +5,7 @@ from simple_http_checker.checker import check_urls
 
 
 def test_check_urls_success(mocker: MockerFixture):
-    mock_requests_get = mocker.patch(
-        "simple_http_checker.checker.requests.get")
+    mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
     mock_response = mocker.MagicMock(spec=requests.Response)
     mock_response.status_code = 200
@@ -23,8 +22,7 @@ def test_check_urls_success(mocker: MockerFixture):
 
 
 def test_check_urls_client_error(mocker: MockerFixture):
-    mock_requests_get = mocker.patch(
-        "simple_http_checker.checker.requests.get")
+    mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
     mock_response = mocker.MagicMock(spec=requests.Response)
     mock_response.status_code = 404
@@ -45,18 +43,16 @@ def test_check_urls_client_error(mocker: MockerFixture):
         (requests.exceptions.Timeout, "TIMEOUT"),
         (requests.exceptions.ConnectionError, "CONNECTION_ERROR"),
         (requests.exceptions.RequestException, "REQUEST_ERROR: RequestException"),
-    ]
+    ],
 )
 def test_check_urls_request_exceptions(
     mocker: MockerFixture,
     error_exception: type[requests.exceptions.RequestException],
     expected_status: str,
 ):
-    mock_requests_get = mocker.patch(
-        "simple_http_checker.checker.requests.get")
+    mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
-    mock_requests_get.side_effect = error_exception(
-        f"Simulated {expected_status}")
+    mock_requests_get.side_effect = error_exception(f"Simulated {expected_status}")
 
     urls = ["https://www.problem.com"]
     results = check_urls(urls)
@@ -66,8 +62,7 @@ def test_check_urls_request_exceptions(
 
 
 def test_check_urls_with_multiple_urls(mocker: MockerFixture):
-    mock_requests_get = mocker.patch(
-        "simple_http_checker.checker.requests.get")
+    mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
     # First call: OK
     mock_response_ok = mocker.MagicMock(spec=requests.Response)
@@ -87,11 +82,14 @@ def test_check_urls_with_multiple_urls(mocker: MockerFixture):
     mock_requests_get.side_effect = [
         mock_response_ok,
         timeout_exception,
-        mock_response_fail
+        mock_response_fail,
     ]
 
-    urls = ["https://www.success.com",
-            "https://www.timeout.com", "https://www.servererror.com"]
+    urls = [
+        "https://www.success.com",
+        "https://www.timeout.com",
+        "https://www.servererror.com",
+    ]
     results = check_urls(urls)
 
     assert len(results) == 3
@@ -107,8 +105,7 @@ def test_check_urls_empty_list():
 
 
 def test_check_urls_custom_timeout(mocker: MockerFixture):
-    mock_requests_get = mocker.patch(
-        "simple_http_checker.checker.requests.get")
+    mock_requests_get = mocker.patch("simple_http_checker.checker.requests.get")
 
     mock_response = mocker.MagicMock(spec=requests.Response)
     mock_response.status_code = 200
