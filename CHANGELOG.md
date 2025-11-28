@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2025-11-28)
+
+### Features
+
+- Add publish to PyPi
+  ([`87a1266`](https://github.com/ca5ual/python-devops-cicd-project/commit/87a1266464e6d03d97f4ea98799eeb62aa181ee5))
+
+
 ## v1.4.0 (2025-11-28)
 
 ### Features
