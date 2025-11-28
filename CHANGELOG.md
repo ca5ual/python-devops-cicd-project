@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.8.0 (2025-11-28)
+
+### Features
+
+- Verbose mode
+  ([`d35a0b9`](https://github.com/ca5ual/python-devops-cicd-project/commit/d35a0b932bc125ef5647592eb7cbe6206d530aa0))
+
+
 ## v1.7.0 (2025-11-28)
 
 ### Features
