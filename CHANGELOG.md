@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.0 (2025-11-28)
+
+### Features
+
+- Change name
+  ([`c331646`](https://github.com/ca5ual/python-devops-cicd-project/commit/c3316460444d16ed5cf9294bdedc64d2b26053ff))
+
+
 ## v1.2.0 (2025-11-28)
 
 ### Features
