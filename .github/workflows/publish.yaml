@@ -64,4 +64,5 @@ jobs:
           path: dist/
       - name: Publsish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        verbose: true
+        with: 
+          verbose: true
