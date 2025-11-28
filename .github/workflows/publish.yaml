@@ -40,7 +40,9 @@ jobs:
     steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
-        path: dist/
+        with:
+          name: simple-http-checker-${{ github.sha }}
+          path: dist/
       - name: Publsish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
