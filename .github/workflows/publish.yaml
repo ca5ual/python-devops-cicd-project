@@ -1,4 +1,4 @@
-name: Publsish to PyPI
+name: Publish to PyPI
 
 on:
   release:
@@ -46,6 +46,6 @@ jobs:
       - name: Publsish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          repository-url: https://test.pypi.org/legacy
+          repository-url: https://test.pypi.org/legacy/
           skip-existing: true
           verbose: false
